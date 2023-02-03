@@ -18,7 +18,7 @@ import es.Acebera.server.service.ServerService;
 @Service
 @Transactional
 public class ServerServiceImplementation implements ServerService{
-	private ServerRepo serverRepo;
+	private final ServerRepo serverRepo;
 	
 	public ServerServiceImplementation (ServerRepo serverRepo) {
 		this.serverRepo = serverRepo;

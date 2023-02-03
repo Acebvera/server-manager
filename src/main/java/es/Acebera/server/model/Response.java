@@ -20,6 +20,18 @@ public class Response {
 	public Response() {
 		super();
 	}
+	
+	
+
+	public Response(LocalDateTime timeStamp, int statusCode, HttpStatus status, String message, Map<?, ?> data) {
+		this.timeStamp = timeStamp;
+		this.statusCode = statusCode;
+		this.status = status;
+		this.message = message;
+		this.data = data;
+	}
+
+
 
 	public LocalDateTime getTimeStamp() {
 		return timeStamp;
