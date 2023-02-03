@@ -1,6 +1,8 @@
 package es.Acebera.server.resource;
 
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.util.Map;
 
@@ -8,6 +10,7 @@ import javax.validation.Valid;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.util.MimeTypeUtils;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -60,5 +63,11 @@ public class ServerResource {
 	public ResponseEntity<Response> deleteServer (@PathVariable("id") Long id) {
 		
 		return ResponseEntity.ok(new Response(LocalDateTime.now(), HttpStatus.OK.value(), HttpStatus.OK, "Server deleted", Map.of("deleted", serverService.delete(id))));
+	}
+	
+	@GetMapping(path = "/image/{fileName}", produces = MimeTypeUtils.IMAGE_PNG_VALUE)
+	public byte[] getServerImage (@PathVariable("fileName") String fileName) throws IOException{
+		
+		return Files.readAllBytes(Paths.get(System.getProperty("user.home") + "Downloads/images" + fileName));
 	}
 }
