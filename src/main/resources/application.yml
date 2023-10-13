@@ -1,9 +1,9 @@
 
 spring:
  datasource:
-  password: psw
+  password: 
   url: jdbc:mysql://localhost:3306/serverdb
-  username: usr
+  username: 
  jpa:
   hibernate:
    ddl-auto: create

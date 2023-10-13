@@ -12,18 +12,18 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import es.Acebera.server.enumeration.Status;
 import es.Acebera.server.model.Server;
 import es.Acebera.server.repo.ServerRepo;
-import es.Acebera.server.connection.ConnectionAdress;
+import es.Acebera.server.connection.ConnectionAddress;
 import es.Acebera.server.service.ServerService;
 
 @Service
 @Transactional
 public class ServerServiceImplementation implements ServerService{
 	private final ServerRepo serverRepo;
-	private ConnectionAdress connectionAdress;
+	private ConnectionAddress connectionAdress;
 	
 	public ServerServiceImplementation (ServerRepo serverRepo) {
 		this.serverRepo = serverRepo;
-		connectionAdress = new ConnectionAdress();
+		connectionAdress = new ConnectionAddress();
 	}
 	
 	@Override

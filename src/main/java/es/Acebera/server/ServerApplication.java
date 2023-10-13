@@ -1,9 +1,11 @@
 package es.Acebera.server;
 
+import org.apache.catalina.filters.CorsFilter;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.web.cors.reactive.UrlBasedCorsConfigurationSource;
 
 import es.Acebera.server.enumeration.Status;
 import es.Acebera.server.model.Server;
@@ -26,5 +28,10 @@ public class ServerApplication {
 			
 		};
 	}
+	
+	/*@Bean
+	public CorsFilter corsFilter () {
+		UrlBasedCorsConfigurationSource urlBasedCorsConfigurationSource = new 
+	}*/
 
 }
